@@ -3,6 +3,7 @@
 FilaPrioridade::FilaPrioridade(){
     tamanho = 0;
     cabeca = NULL;
+    menorPrioridade = 0;
 }
 
 int FilaPrioridade::estaVazio(){
@@ -106,6 +107,12 @@ int FilaPrioridade::getUltimo(){
     for (int i = 0; i < this->getTamanho() - 1; i++)
         aux = new No(aux->getProximo());
     return aux->getDado();
+}
+void FilaPrioridade::furaFila(int dado){
+    No *aux = new No(this->cabeca->getPrioridade(),this->cabeca->getDado(),this->cabeca->getProximo());
+    this->cabeca = new No(menorPrioridade,dado, aux);
+    tamanho++;
+    menorPrioridade++;
 }
 void FilaPrioridade::print(){
     No *aux = new No(this->cabeca);

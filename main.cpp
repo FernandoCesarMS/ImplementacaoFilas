@@ -24,10 +24,10 @@ int main(int argc, char **argv)
   std::cout << "r:" << fila->remover() << ", ";
   std::cout << "m:" << fila->getMeio() << ", ";
   std::cout << "u:" << fila->getUltimo() << ", ";
-  /*fila->furaFila(7);
+  fila->furaFila(7);
   std::cout << "m:" << fila->getMeio() << ", ";
   std::cout << "u:" << fila->getUltimo() << std::endl;
   fila->print();
-  std::cout << std::endl;*/
+  std::cout << std::endl;
   return 0;
 }
