@@ -12,7 +12,7 @@ class No {
 	int _prioridade;
   public:
     No(int prioridade, int dado, No* proximo);
-    
+    No(No *no);
 	/** Seta o próximo nó.
      */
     void setProximo(No *next);

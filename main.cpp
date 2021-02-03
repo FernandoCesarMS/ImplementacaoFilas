@@ -1,20 +1,21 @@
 #include <iostream>
-#include "FilaPrioridade.hpp"
+#include "FilaPrioridade.cpp"
 
 using namespace std;
 
-
-int main(int argc, char** argv) {
+int main(int argc, char **argv)
+{
   int prioridade;
   int dado;
- 
+
   FilaPrioridade *fila = new FilaPrioridade();
-  while (cin >> prioridade) {
-	cin >> dado;
+  while (cin >> prioridade){
+    cin >> dado;
+    if (prioridade == 100)
+      break;
     fila->inserir(prioridade, dado);
-    
   }
-  
+
   fila->print();
   std::cout << std::endl;
   std::cout << "s:" << fila->getTamanho() << ", ";
@@ -23,10 +24,10 @@ int main(int argc, char** argv) {
   std::cout << "r:" << fila->remover() << ", ";
   std::cout << "m:" << fila->getMeio() << ", ";
   std::cout << "u:" << fila->getUltimo() << ", ";
-  fila->furaFila(7);
+  /*fila->furaFila(7);
   std::cout << "m:" << fila->getMeio() << ", ";
   std::cout << "u:" << fila->getUltimo() << std::endl;
   fila->print();
-  std::cout << std::endl;
+  std::cout << std::endl;*/
   return 0;
 }

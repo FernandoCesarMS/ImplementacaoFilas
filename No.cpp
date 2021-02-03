@@ -5,6 +5,11 @@ No::No(int prioridade, int dado, No* proximo){
     this->_dado = dado;
     this->_proximo = proximo;
 }
+No::No(No *no){
+    this->_dado = no->getDado();
+    this->_prioridade = no->getPrioridade();
+    this->_proximo = no->getProximo();
+}
 void No::setProximo(No *next){
     this->_proximo = next;
 }
