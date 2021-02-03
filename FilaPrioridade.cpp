@@ -39,7 +39,7 @@ void FilaPrioridade::inserir(int prioridade, int dado){
     }   
     else{
         if (this->tamanho == 1){
-            if (this->cabeca->getPrioridade() < prioridade){
+            if (this->cabeca->getPrioridade() <= prioridade){
                 No *aux = new No(prioridade,dado, NULL);
                 this->cabeca->setProximo(aux);
                 tamanho++;
@@ -58,7 +58,7 @@ void FilaPrioridade::inserir(int prioridade, int dado){
             No *aux = new No(this->cabeca->getPrioridade(),this->cabeca->getDado(), this->cabeca->getProximo());
             for (i=0;aux->getProximo() != NULL;i++){
                 No *aux2 = new No(prioridade,dado, aux->getProximo());
-                if ((inserido == false) && (aux->getProximo()->getPrioridade() >= prioridade)){
+                if ((inserido == false) && (aux->getProximo()->getPrioridade() > prioridade)){
                     aux->setProximo(aux2);
                     inserido = true;
                 }

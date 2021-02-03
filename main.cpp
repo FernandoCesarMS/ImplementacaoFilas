@@ -1,5 +1,5 @@
 #include <iostream>
-#include "FilaPrioridade.cpp"
+#include "FilaPrioridade.hpp"
 
 using namespace std;
 
@@ -11,8 +11,6 @@ int main(int argc, char **argv)
   FilaPrioridade *fila = new FilaPrioridade();
   while (cin >> prioridade){
     cin >> dado;
-    if (prioridade == 100)
-      break;
     fila->inserir(prioridade, dado);
   }
 
